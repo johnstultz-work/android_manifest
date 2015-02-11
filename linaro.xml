@@ -1,18 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
   <!-- Repositories -->
-  <!-- Linaro Repositories -->
-  <remove-project name="platform/external/wpa_supplicant_8" /> 
-  <remote name="linaro-android" fetch="git://android.git.linaro.org/" review="review.android.git.linaro.org" />
-  <remote name="github" fetch="http://github.com/96boards" />
-  <remote name="linaro-other" fetch="git://git.linaro.org/" />
-  <!-- Linaro Device Configs -->
-  <project path="device/linaro/hikey" name="android_device_linaro_hikey" revision="android-5.0" remote="github" groups="device,lcb" />
-  <project path="device/linaro/build" name="device/linaro/common" revision="linaro-lollipop-experimental" remote="linaro-android" groups="default" />
+  <remote name="freedesktop" fetch="git://anongit.freedesktop.org/" />
+  <remote name="github" fetch="http://github.com/johnstultz-work" />
 
-  <!-- Linaro Kernels -->
-  <project path="kernel/linaro/hisilicon" name="linux" revision="hikey" remote="github" groups="default" />
-  <project path="external/wpa_supplicant_8" name="android_external_wpa_supplicant_8" revision="android-5.0" remote="github" groups="device,lcb" />
-  <project path="hardware/ti/wpan" name="android_hardware_ti_wpan" revision="android-5.0" remote="github" groups="device,lcb" />
+  <!-- Linaro Device Configs -->
+  <remove-project path="device/linaro/hikey" name="device/linaro/hikey" />
+  <project path="device/linaro/hikey" name="android_device_linaro_hikey" revision="drm_hwc" remote="github" groups="default" />
+
+  <!-- Pre-built kernel tree -->
+  <remove-project path="device/linaro/hikey-kernel" name="device/linaro/hikey-kernel" />
+  <project path="device/linaro/hikey-kernel" name="aosp-device-linaro-hikey-kernel" revision="drm_hwc" remote="github" groups="default" />
+
+  <!-- Critical drm_hwcomposer components -->
+  <remove-project path="external/drm_hwcomposer" name="platform/external/drm_hwcomposer" />
+  <project path="external/drm_hwcomposer" name="drm_hwcomposer" revision="drm_hwc" remote="github" groups="default" />
+
+  <remove-project path="external/libdrm" name="platform/external/libdrm" />
+  <project path="external/libdrm" name="mesa/drm" revision="master" remote="freedesktop" groups="default" />
 
 </manifest>
