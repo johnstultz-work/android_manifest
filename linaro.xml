@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
   <!-- Repositories -->
-  <remote name="freedesktop" fetch="git://anongit.freedesktop.org/" />
   <remote name="github" fetch="http://github.com/johnstultz-work" />
 
   <!-- Linaro Device Configs -->
@@ -15,8 +14,5 @@
   <!-- Critical drm_hwcomposer components -->
   <remove-project path="external/drm_hwcomposer" name="platform/external/drm_hwcomposer" />
   <project path="external/drm_hwcomposer" name="drm_hwcomposer" revision="drm_hwc" remote="github" groups="default" />
-
-  <remove-project path="external/libdrm" name="platform/external/libdrm" />
-  <project path="external/libdrm" name="libdrm" revision="drm_hwc" remote="github" groups="default" />
 
 </manifest>
